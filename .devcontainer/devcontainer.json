@@ -1,17 +1,21 @@
 {
   "name": "Flutter + Laravel Dev Container",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "mcr.microsoft.com/devcontainers/php:8.3-bullseye",
   "features": {
-    "ghcr.io/devcontainers/features/flutter:1": {
-      "version": "stable"
-    },
-    "ghcr.io/devcontainers/features/php:1": {
-      "version": "8.2"
-    },
-    "ghcr.io/devcontainers/features/composer:1": {},
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "20"
-    }
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {}
   },
-  "postCreateCommand": "composer global require laravel/installer"
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "junstyle.php-cs-fixer",
+        "dbaeumer.vscode-eslint",
+        "dart-code.dart-code",
+        "dart-code.flutter"
+      ]
+    }
+  }
 }
+
